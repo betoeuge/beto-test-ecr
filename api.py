@@ -7,9 +7,11 @@ app.config["DEBUG"] = True
 
 @app.route('/', methods=['GET'])
 def getInfo():
-    out = {'status':False}
-   
-    ejemplo = int(request.args.get('ejemplo'))
-    return {'status':True}
+    try:
+        name = request.args.get('name')
+    except:
+        name = 'Not name'
+    out = {'name':name}
+    return {'name':out}
 
 app.run('0.0.0.0', 5000 , True)

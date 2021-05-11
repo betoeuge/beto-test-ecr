@@ -10,7 +10,7 @@ def getInfo():
     try:
         name = request.args.get('name')
     except:
-        name = 'Not name'
+        name = 'No name'
     out = {'name':name}
     return {'name':out}
 
